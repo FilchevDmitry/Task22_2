@@ -18,9 +18,15 @@ int main()
             exit = false;
         }
         else if (name == "next")
-        {
-            std::cout << "<- " << registry.begin()->second << std::endl;
-            registry.erase(registry.begin());
+        {   
+            if (!registry.empty())
+            {
+                std::cout << "<- " << registry.begin()->second << std::endl;
+                registry.erase(registry.begin());
+            }
+            else {
+                std::cout << "The queue is empty!!!\n";
+            }
         }
         else
         {
